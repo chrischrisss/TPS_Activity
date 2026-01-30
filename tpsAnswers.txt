@@ -1,0 +1,51 @@
+TPS ACTIVITY 1
+
+1. Record your TPS partners’ names.
+    Kaustubh Kuruba, Sidy Ba, Christian Vasquez-Perez 
+
+
+TPS ACTIVITY 2
+
+1. How can you open a terminal from your Linux/Mac/Windows computer?
+a. Can you open more than 1 terminal at the same time?
+    For mac/windows you search for the terminal in the search bar
+
+b. Why do you think you want to open more than 1 terminal at the same time?
+    You can use more than one terminal to multitask. For example, each can run an individual program and display different output.
+
+2. In the terminal, how can you tell what are contents inside the current directory (i.e., what is the
+command)?
+    To tell the contents inside the current directory you use the command ls
+
+
+3. From your current directory, how can you navigate to Desktop directory?
+    From your current directory you can navigate using the command cd [filename] or cd .. to move back in a directory
+
+4. While you are in Desktop, create a new directory called CSE31. How do you do this
+    To create a new directory called CSE31 you go to the terminal and type mkdir CSE31.
+
+
+TPS ACTIVITY 3
+
+3. What command do you type in the terminal to compile your main.c?
+    If you want to compile main.c you type gcc main.c in the terminal.
+
+4. How do you know if your program has compiled successfully?
+    If your program compiled successfully an executable file is created.
+
+5. What does the –c flag do in gcc?
+    The -c stops the compiler from linking and creates an object file with the extension .o.
+
+6. What does the –g flag do in gcc?
+    The -g tells the compiler to produce debugging information. This is useful when debugging a program.
+
+7. How do you change the executable name from main to cselab1?
+    Use the -o command line when compiling and change the name of main to cselab1.
+
+8. What happens when you compile your code by typing gcc main.c only?
+    It creates the object files and links to an executable in one line.
+
+9. Now, let us run the program you have just compiled. What command do you use?
+    To run the compiled program you type ./a.out in the terminal or ./[NameOfExecutableFile].
+
+
