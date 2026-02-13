@@ -1,0 +1,27 @@
+WHILE (NUM != 0) {
+    IF (CHECKNUM(NUM) == 1) {
+        INSERT IN EVEN[]
+    } ELSE 
+        INSERT IN ODD[]
+
+}
+
+AVERAGESEVEN() {
+    AVERAGES = EVENSUM / EVENCOUNT
+    RETURN AVERAGES
+}
+
+AVERAGESODD() {
+    AVERAGES = ODDSUM / ODDCOUNT
+    RETURN AVERAGES
+}
+
+CHECHNUM() {
+    IF INDEX[0] == '-'
+        SUM * NEGATIVE_SIGN
+    IF (SUM % 2 == 0) {
+        RETURN 1
+    } ELSE
+        RETURN 0
+}
+
