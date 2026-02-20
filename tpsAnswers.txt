@@ -1,51 +1,50 @@
-TPS ACTIVITY 1
+TPS Activity 1
 
-1. Record your TPS partners’ names.
     Kaustubh Kuruba, Sidy Ba, Christian Vasquez-Perez 
 
 
-TPS ACTIVITY 2
+TPS Activity 2
 
-1. How can you open a terminal from your Linux/Mac/Windows computer?
-a. Can you open more than 1 terminal at the same time?
-    For mac/windows you search for the terminal in the search bar
+1. How do you compile your punishment.c so that you can debug it using GDB (or LLDB for MAC)?
+    When compiling you type "gcc -g <name_of_file>" in the terminal to make a executable that is made for debugging.
 
-b. Why do you think you want to open more than 1 terminal at the same time?
-    You can use more than one terminal to multitask. For example, each can run an individual program and display different output.
+2. Once punishment.c is compiled, how do you load it in GDB (or LLDB for MAC)? Try it with your
+program.
+    For MACOS you go to your terminal and type "lldb <name_of_executable>". For WindosOS it is "gdb <name_of_executable>
 
-2. In the terminal, how can you tell what are contents inside the current directory (i.e., what is the
-command)?
-    To tell the contents inside the current directory you use the command ls
+3. Once punish is loaded, how do you run it in GDB (or LLDB for MAC)?
+    To run the executable in GDB or LLDB you type "run" or "r" in the GDB/LLDB terminal
 
+4. What are breakpoints? How do you set a breakpoint at a certain line of your program?
+    Breakpoints are checks that tell the debugger to stop at a certain function. To set a breakpoint in GDB/LLDB you type "b <name_of_function>"
 
-3. From your current directory, how can you navigate to Desktop directory?
-    From your current directory you can navigate using the command cd [filename] or cd .. to move back in a directory
+5. Now run the program again. It should stop at the breakpoint you set in Q4. From here, how do you run
+the program line by line?
+    To move to the next line after a breakpoint then you can type "n" in the terminal to move to the next line.
 
-4. While you are in Desktop, create a new directory called CSE31. How do you do this
-    To create a new directory called CSE31 you go to the terminal and type mkdir CSE31.
+6. While you are still running punish line by line, how can you see the value of a variable? 
+    To view a varaible you type "frame variable <name_of_variable>"
 
+7. Now that you are tired of running line by line, how do you let the program finish its run?
+    To let the program finish running you type "run" in the terminal.
 
-TPS ACTIVITY 3
-
-3. What command do you type in the terminal to compile your main.c?
-    If you want to compile main.c you type gcc main.c in the terminal.
-
-4. How do you know if your program has compiled successfully?
-    If your program compiled successfully an executable file is created.
-
-5. What does the –c flag do in gcc?
-    The -c stops the compiler from linking and creates an object file with the extension .o.
-
-6. What does the –g flag do in gcc?
-    The -g tells the compiler to produce debugging information. This is useful when debugging a program.
-
-7. How do you change the executable name from main to cselab1?
-    Use the -o command line when compiling and change the name of main to cselab1.
-
-8. What happens when you compile your code by typing gcc main.c only?
-    It creates the object files and links to an executable in one line.
-
-9. Now, let us run the program you have just compiled. What command do you use?
-    To run the compiled program you type ./a.out in the terminal or ./[NameOfExecutableFile].
+8. How do you exit from GDB (or LLDB for MAC)?
+    To exit from the debugger you type "quit" in the terminal.
 
 
+
+TPS Activity 3
+
+1. How many variables were declared in the first line of main()? How many of them are pointers (and
+what are they)?
+    There are four variables declared. Two of them are pointers that hold a memeory address.
+
+2. What will be the values of x, y, and arr[0] if you run the program? 
+    The values of x, y, and arr[0] are going to be garbage values.
+
+3. How do you prevent x, y, and the content of arr from having unexpected values? Try to fix them in
+the program.
+    To prevent this you can iniziaile the varaibles to something then change them later on in the program.
+
+8. Now print out the address of arr. Does the result make sense? Why?
+    Yes, beacuse the arr[0] points to the first memory address of the array and so does arr.
