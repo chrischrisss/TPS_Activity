@@ -1,50 +1,19 @@
 TPS Activity 1
 
-    Kaustubh Kuruba, Sidy Ba, Christian Vasquez-Perez 
+1.  Name the 3 pools for memory and what kind of variables will be stored in each pool.
+    The three pools of memory are stack, heap, and static/data segment. The stack stores local variables or function parameters. The heap holds allocated memory. the data segment stores static or gloabl variables that last through the whole program.
 
+2. 
+    a. There are 3 varaibles that are declared
+    b. There are 2 pointers declare. ptr points to the memory address of an int and handle points to a pointer
+    c. the varibles are stored in the stack
+    d. ptr will point to a section on the heap when malloc is called
 
 TPS Activity 2
 
-1. How do you compile your punishment.c so that you can debug it using GDB (or LLDB for MAC)?
-    When compiling you type "gcc -g <name_of_file>" in the terminal to make a executable that is made for debugging.
+1. In NodeStruct there is a variables named head that points to a struct and dynamically allocates the needed space for it
 
-2. Once punishment.c is compiled, how do you load it in GDB (or LLDB for MAC)? Try it with your
-program.
-    For MACOS you go to your terminal and type "lldb <name_of_executable>". For WindosOS it is "gdb <name_of_executable>
-
-3. Once punish is loaded, how do you run it in GDB (or LLDB for MAC)?
-    To run the executable in GDB or LLDB you type "run" or "r" in the GDB/LLDB terminal
-
-4. What are breakpoints? How do you set a breakpoint at a certain line of your program?
-    Breakpoints are checks that tell the debugger to stop at a certain function. To set a breakpoint in GDB/LLDB you type "b <name_of_function>"
-
-5. Now run the program again. It should stop at the breakpoint you set in Q4. From here, how do you run
-the program line by line?
-    To move to the next line after a breakpoint then you can type "n" in the terminal to move to the next line.
-
-6. While you are still running punish line by line, how can you see the value of a variable? 
-    To view a varaible you type "frame variable <name_of_variable>"
-
-7. Now that you are tired of running line by line, how do you let the program finish its run?
-    To let the program finish running you type "run" in the terminal.
-
-8. How do you exit from GDB (or LLDB for MAC)?
-    To exit from the debugger you type "quit" in the terminal.
+3. The pointer where head is stored is no where near where the Node structure is. However the data inside the Node structre are together.
 
 
 
-TPS Activity 3
-
-1. How many variables were declared in the first line of main()? How many of them are pointers (and
-what are they)?
-    There are four variables declared. Two of them are pointers that hold a memeory address.
-
-2. What will be the values of x, y, and arr[0] if you run the program? 
-    The values of x, y, and arr[0] are going to be garbage values.
-
-3. How do you prevent x, y, and the content of arr from having unexpected values? Try to fix them in
-the program.
-    To prevent this you can iniziaile the varaibles to something then change them later on in the program.
-
-8. Now print out the address of arr. Does the result make sense? Why?
-    Yes, beacuse the arr[0] points to the first memory address of the array and so does arr.
