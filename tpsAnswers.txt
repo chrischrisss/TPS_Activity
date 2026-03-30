@@ -1,61 +1,42 @@
 TPS Activity 1
 
-1. Open MemCast.c, compile and run the program. What do you expect the program to print? (%x in
-printf allows an integer to be printed in Hex format).
-    If %x prints out the integer in Hex format then I am assuming that it will print out the Hex value of the first index
+1. Before we use a new tool, we will need to find out how to use it. MARS DOES NOT mean that MIPS
+is an alien language (well, sort of). Work with your partner and find out what MARS stands for.
+    MIPS Assembler and Runtime Simulator
 
-2.
-Before changing the code, what do you expect the program to print if you print four_ints[0]
-again at the end of the program?
-    I expect the program to print the hex value.
-
-3. Insert a print statement to output four_ints[0] at the end of the program in hex and verify your
-answer from (2).
-    It printed a different number not it hex format.
-
-4. Now add a print statement to the program so it will print out four_ints[1] in hex. What does it
-print? Are you surprised (or lost) by the results?
-    It prints a 2 which is not a hex value.
-
-5. Let us study the code carefully and investigate what happened. No, the memory did not go crazy.
-    a. How many array(s) were allocated in this program?
-        Two arrays were allocated in this program.
-    b. Are four_ints and four_c pointing to the same location?
-        Yes, they are pointing to the same memory address.
-    c. Verify your answer of (b) by printing out the values of four_ints and four_c.
-
-6. Write a loop to print out the addresses and values (in Hex) of all the elements of four_ints. What is
-the difference in addresses between two consecutive elements? Discuss what this difference means.
-    The difference is four bytes. That means each element is an int.
-
-8. Now, write a loop to print out the same information for four_c as you did in (6). What is the
-difference in addresses between two consecutive elements? Discuss what this difference means.
-    The addresses are now one byte apart. The difference now is that the four_c array can only hold the first four bytes of the four_ints array.
-
-10. By comparing the layout of the array pointed by the two pointers, what do you observe in terms of how
-C accesses memory when the index of an array is incremented?
-    One array views memory as a char and the other as an int. In other words, when an array index increments by one the memory increments by the size of the data type.
+5. Follow Part 1 : Basic MARS Use in the tutorial using Fibonacci.asm and discuss the following
+questions:
+    a. How do you load an assembly file?
+    b. How do you assemble (compile) the program?
+    c. How do you run the assembled program?
+    d. Can you run a program before assembling it?
+    e. If you want to run the assembled program line by line, how to do it?
+    f. How do you run the program again after it has finished running?
 
 
-TPS Activity
+TPS Activity 2
 
-1. Open Array2D.c. This program will create a n x n array of int. Explain what line #8 does.
-    Line 8 declares a dynamically allocated 5 x 5 2d array.
-
-2. Since every array must be allocated in the memory before it can be used, we need to allocate the rows
-one by one. To do this, we need to be able to access the pointers from the first array (pointed by arr).
-Assuming i is the index of that array, how do we access the ith value of the array?
-    We use a for-loop to access the first array.
-
-3. Without using array notations ([]), insert code to complete
-allocating all the rows and initialize all
-contents to be 0. Your code should work with different values for n. Hint: if j is the index of each
-row, how do you access arr[i][j] in pointer notation?
-    To access arr[i][j] you use *(*(block + i) + j)
-
-4. To verify whether you have created your array correctly, we need a function to print out the array. The
-function printArray has been declared. It takes in both the array to be printed and size of array. Why
-do we need to pass the size as an argument?
-    The size needs to be passed to print the necessary rows and columns.
-
-
+1. What do the .data, .word, .text directives mean (i.e., what do you put in each section)?
+    For .data section this is where you put static varaibles or constants.
+    For .word section this allocates 32bits typically for integers.
+    For .text section this is where the program's instructions go.
+2. What does line 10 do?
+    Line 10 compares $t0 with zero and jumps to finish if true.
+3. What does line 15 do?
+    Line 15 jumps up back to fib which is line 10.
+4. How do you set a breakpoint in MARS? Set breakpoint on line 15 and list the steps of achieving this.
+    You want to first assemble the program and then go to the Execute tab and on the first window there will be a column named Bkpt where you check it to create a breakpoint in the program.
+5. After your program stops because of a breakpoint, how do you continue to execute your code? How do
+you step through your code?
+    You continue the program using the the run program and next step button.
+6. How can you find out the content of a register? How do you modify the value of a register manually
+while running the program?
+    The content of a register is located to the right of the screen where you can double click any of the values and change them.
+7. At what address is n stored in memory? Calculate the 13th fib number by modifying this memory
+location.
+    The address that n is stored in is 0x10010000. 
+8. Line 19 and 21 use the syscall instruction. What is it and how do you use it?
+    li      $v0, 1	this is telling the os to print out a integer value
+	syscall			this calls the os to print put the integer
+	li      $v0, 10	this is the system code to tell the os terminate the program
+	syscall	        the os then terminates the program
