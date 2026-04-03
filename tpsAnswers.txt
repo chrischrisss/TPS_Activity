@@ -1,42 +1,57 @@
 TPS Activity 1
 
-1. Before we use a new tool, we will need to find out how to use it. MARS DOES NOT mean that MIPS
-is an alien language (well, sort of). Work with your partner and find out what MARS stands for.
-    MIPS Assembler and Runtime Simulator
+    0x00400000
+    0x10010000
 
-5. Follow Part 1 : Basic MARS Use in the tutorial using Fibonacci.asm and discuss the following
-questions:
-    a. How do you load an assembly file?
-    b. How do you assemble (compile) the program?
-    c. How do you run the assembled program?
-    d. Can you run a program before assembling it?
-    e. If you want to run the assembled program line by line, how to do it?
-    f. How do you run the program again after it has finished running?
+2. The Text Segment shows you how each actual machine code is stored in the memory (again it is
+simulated) and its corresponding MIPS code. Two types of MIPS code are shown here: Basic and Source.
+We call the Basic one True Assembly Language, and the Source one MIPS Assembly Language.
+From the display, what can you tell about the difference between the two in terms of their relationship
+with the machine code? We will cove this topic in future lectures.
+    The source code get broken down into more native assembly instructions 
+
+3. Now, let us take a look at the Data Segment. How much difference in bytes are there between 2 address
+locations (again, the addresses are in Hex)?
+    The addresses are 20 bits apart or 5 bytes
+
+4. For each address location, how many columns are there?
+    There are 8 columns for each address
+
+5. What can you tell about the relationship between the address difference and the number of columns at
+each address location?
+    Each column is increasing by 4 bits 
+
+6. From the source code, how do you create a new variable/label named m and set it to 20?
+    m:	.word 20 in the data section
+
+7. Save and assemble your file. At what address is the value of m stored?
+    the address is 0x10010004 in hexadecimal
+
+8. Besides numbers, we can also initialize strings for the program to use. Search from the Internet on how
+to declare a string named str1 and set it to “I love CSE31!”
+    string:	.asciiz "I love CSE31" in the data section
+
+9. Insert the declaration of str1 in your code and assemble it. From the Data Segment, we can see that
+the string is occupying 3 address locations. At what addresses is str1 stored?
+    The addresses that the string are stored in 0x10010008 to 0x10010010
+
+10. str1 is stored as numerical values in the memory. Check the
+ASCII box and observe how it is stored.
+Does the display of characters agree with what you have learned from Lab 04 about how an array of
+characters is stored?
+    No the way strings are stored in MIPS is different than how it is stored in C.
+
+11. In order to print str1, we will need to use syscall function. Search the Internet to find out how to
+print str1
+    la	$a0, string
+	li	$v0, 4
+	syscall	
+
+12. Now let us go back to the program. Search from the Internet to find out what “la $t3, n” does.
+What will be the value stored in $t3 after running this instruction? From this we can see that we cannot use the initialized variables (labels) directly in our MIPS program. We need to use la, then lw to save
+the value into a register.
+    The la loads the address of n in the register $t3
 
 
-TPS Activity 2
 
-1. What do the .data, .word, .text directives mean (i.e., what do you put in each section)?
-    For .data section this is where you put static varaibles or constants.
-    For .word section this allocates 32bits typically for integers.
-    For .text section this is where the program's instructions go.
-2. What does line 10 do?
-    Line 10 compares $t0 with zero and jumps to finish if true.
-3. What does line 15 do?
-    Line 15 jumps up back to fib which is line 10.
-4. How do you set a breakpoint in MARS? Set breakpoint on line 15 and list the steps of achieving this.
-    You want to first assemble the program and then go to the Execute tab and on the first window there will be a column named Bkpt where you check it to create a breakpoint in the program.
-5. After your program stops because of a breakpoint, how do you continue to execute your code? How do
-you step through your code?
-    You continue the program using the the run program and next step button.
-6. How can you find out the content of a register? How do you modify the value of a register manually
-while running the program?
-    The content of a register is located to the right of the screen where you can double click any of the values and change them.
-7. At what address is n stored in memory? Calculate the 13th fib number by modifying this memory
-location.
-    The address that n is stored in is 0x10010000. 
-8. Line 19 and 21 use the syscall instruction. What is it and how do you use it?
-    li      $v0, 1	this is telling the os to print out a integer value
-	syscall			this calls the os to print put the integer
-	li      $v0, 10	this is the system code to tell the os terminate the program
-	syscall	        the os then terminates the program
+
